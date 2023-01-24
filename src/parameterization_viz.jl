@@ -7,9 +7,17 @@ using JSServe
 using SparseArrays
 using Statistics
 
-using ClimaLSM # needed because of create_parameters.jl 
-using ClimaLSM.Soil.Biogeochemistry # how can I avoid this deps?
-using SurfaceFluxes, Thermodynamics, CLIMAParameters # how can I avoid these deps?
+#using ClimaLSM # needed because of create_parameters.jl 
+#using ClimaLSM.Soil.Biogeochemistry # how can I avoid this deps?
+
+# using SurfaceFluxes, Thermodynamics, CLIMAParameters # how can I avoid these deps?
+
+import CLIMAParameters as CP
+import Thermodynamics.Parameters as TDP
+import SurfaceFluxes.Parameters as SFP
+import SurfaceFluxes.UniversalFunctions as UF
+import ClimaLSM.Parameters as LSMP
+using ClimaLSM
 include(joinpath(pkgdir(ClimaLSM), "parameters", "create_parameters.jl")) 
 export create_lsm_parameters
 

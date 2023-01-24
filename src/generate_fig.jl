@@ -9,7 +9,8 @@ include("src/fun_discretisation.jl")
 
 #= run using Module (work as a package, but is not registered)
 using parameterization_viz # local
-using ClimaLSM, ClimaLSM.Soil.Biogeochemistry
+#using ClimaLSM
+using ClimaLSM.Soil.Biogeochemistry
 
 model_parameters = SoilCO2ModelParameters
 model_functions = Dict("CO2 production" => (d1, d2, p) -> microbe_source(d1, d2, 5.0, p),
@@ -27,7 +28,7 @@ Generates an interactive web dashboard of the parameterization functions of a mo
 """
 function param_dashboard(model_parameters, model_functions, drivers_name, drivers_limit) 
   # Create a Figure and its layout: a Menu, a 3D axis, and 2 2D axis 
-  fig = Figure(resolution = (600, 600))
+  fig = Figure(resolution = (1200, 1200))
   menu_opt = collect(keys(model_functions)) 
   menu = Menu(fig[1,1:2], options = menu_opt); m = menu.selection
   ax3D = Axis3(fig[2,2], xlabel = drivers_name[1], ylabel = drivers_name[2])#, alignmode = Outside(50))
