@@ -1,1 +1,1 @@
-web: julia --project src/JSServe_app.jl
+web: julia --project JSServe_app.jl
