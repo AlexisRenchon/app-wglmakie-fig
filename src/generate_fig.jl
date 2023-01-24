@@ -27,7 +27,7 @@ Generates an interactive web dashboard of the parameterization functions of a mo
 """
 function param_dashboard(model_parameters, model_functions, drivers_name, drivers_limit) 
   # Create a Figure and its layout: a Menu, a 3D axis, and 2 2D axis 
-  fig = Figure(resolution = (1200, 1200))
+  fig = Figure(resolution = (600, 600))
   menu_opt = collect(keys(model_functions)) 
   menu = Menu(fig[1,1:2], options = menu_opt); m = menu.selection
   ax3D = Axis3(fig[2,2], xlabel = drivers_name[1], ylabel = drivers_name[2])#, alignmode = Outside(50))
