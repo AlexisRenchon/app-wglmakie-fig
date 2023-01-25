@@ -27,4 +27,7 @@ export mat, d1_vec, d2_vec
 include("generate_fig.jl")
 export param_dashboard
 
+using ClimaLSM.Soil.Biogeochemistry
+export SoilCO2ModelParameters, microbe_source, co2_diffusivity
+
 end 
