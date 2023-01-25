@@ -1,7 +1,3 @@
-using Pkg
-using Dates
-Pkg.gc(;collect_delay=Dates.Day(0))
-
 using JSServe
 using parameterization_viz 
 
