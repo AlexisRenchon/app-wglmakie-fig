@@ -1,7 +1,7 @@
 using JSServe
 using WGLMakie 
 
-function demo(
+function demo()
         fig = Figure()
         ax = Axis(fig[1, 1])
         sg = SliderGrid(
@@ -15,14 +15,14 @@ function demo(
         bars = lift(sliderobservables...) do slvalues...
                 [slvalues...]
         end
-        barplot!(ax, bars, color = [:yellow, :orange, :red])
+        WGLMakie.barplot!(ax, bars, color = [:yellow, :orange, :red])
         ylims!(ax, 0, 30)
         fig
-        )
+        return fig
+end
 
-fig = demo()
-
-my_app = App() do session::Session    
+my_app = App() do session::Session  
+    fig = demo()
     return DOM.div(fig) 
 end
 
