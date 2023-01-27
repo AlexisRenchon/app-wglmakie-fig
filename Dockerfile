@@ -24,4 +24,4 @@ RUN julia --project -e "import Pkg; Pkg.instantiate(); Pkg.precompile()"
 COPY JSServe_app.jl ./JSServe_app.jl
 
 # Run the app
-RUN julia --project -e "include("JSServe_app.jl")"
+RUN julia --project -e 'include("JSServe_app.jl")'
