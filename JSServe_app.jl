@@ -26,9 +26,9 @@ my_app = App() do session::Session
     return DOM.div(fig) 
 end
 
-app_name = get(ENV, "HEROKU_APP_NAME", "jsserve-app-test")
-url = "https://$(app_name).herokuapp.com"
-server = JSServe.Server(my_app, "0.0.0.0", parse(Int, ENV["PORT"]))
-server.proxy_url = url
+#app_name = get(ENV, "HEROKU_APP_NAME", "jsserve-app-test")
+#url = "https://$(app_name).herokuapp.com"
+#server = JSServe.Server(my_app, "0.0.0.0", parse(Int, ENV["PORT"]))
+#server.proxy_url = url
 
-wait(server)
+#wait(server)
