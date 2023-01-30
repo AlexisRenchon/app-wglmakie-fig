@@ -14,14 +14,12 @@ RUN wget https://julialang-s3.julialang.org/bin/linux/x64/1.9/${JULIA_NAME} && \
     ln -s /opt/julia-1.9.0-beta2/bin/julia /usr/local/bin/julia && \
     rm ${JULIA_NAME}
 
-# Copy Project.toml
-COPY Project.toml ./Project.toml 
-
-# Install dependencies
-RUN julia --project -e "import Pkg; Pkg.instantiate(); Pkg.precompile()"
-
-# Copy JSServe_app.jl
+# Copy Project.toml & JSServe_app.jl
+COPY Project.toml ./Project.toml
 COPY JSServe_app.jl ./JSServe_app.jl
 
-# Run the app
+# Install deps
+RUN julia --project -e "import Pkg; Pkg.instantiate(); Pkg.precompile()" 
+
+# Run script
 CMD julia --project -e 'include("JSServe_app.jl")'
