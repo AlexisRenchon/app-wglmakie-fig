@@ -28,12 +28,11 @@ end
 
 #= works locally:
 docker run -p 5002:5002 -e PORT=5002 test4
+server = JSServe.Server(my_app, "0.0.0.0", parse(Int, ENV["PORT"]))
+wait(server)
 =#
 
-#server = JSServe.Server(my_app, "0.0.0.0", parse(Int, ENV["PORT"]))
-#wait(server)
-
-app_name = get(ENV, "HEROKU_APP_NAME", "jsserve-app-test")
+app_name = get(ENV, "HEROKU_APP_NAME", "wglmakie-mwe")
 url = "https://$(app_name).herokuapp.com"
 server = JSServe.Server(my_app, "0.0.0.0", parse(Int, ENV["PORT"]))
 server.proxy_url = url
