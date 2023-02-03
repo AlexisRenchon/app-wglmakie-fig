@@ -20,6 +20,6 @@ Important: the name of your app need to be in `JSServe_app.jl`, line 35 in this 
 
 ```$ heroku container:push web```
 
-```heroku container:release web```
+```$ heroku container:release web```
 
 Done! 
