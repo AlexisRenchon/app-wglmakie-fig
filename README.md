@@ -11,11 +11,12 @@ Summarized below:
 
 ```$ heroku container:login```
 
+```$ heroku create MY-APP-NAME```
+
 Replace MY-APP-NAME by your app name, in this repo for example, the app is called wglmakie-mwe
 
 Important: the name of your app need to be in `JSServe_app.jl`, line 35 in this repo 
 
-```$ heroku create MY-APP-NAME```
 
 ```$ heroku container:push web```
 
